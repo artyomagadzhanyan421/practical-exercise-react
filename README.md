@@ -2,7 +2,7 @@
 
 * Reusable components
 * Fake API fetching
-* Transfering data with props
+* Transferring data with props
 * CSS styling
 * React Router for navigation
 * Boxicons for icons
