@@ -1,0 +1,38 @@
+table {
+    text-align: left;
+    overflow: hidden;
+    margin: 50px auto;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+table a {
+    color: #3B82F6;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 8px;
+}
+
+table td, 
+table th {
+    padding: 18px 25px;
+    width: 200px;
+    line-height: 1.4em;
+}
+
+table th {
+    background: #334155;
+    color: white;
+}
+
+table tr {
+    background: #F1F5F9;
+    font-weight: 500;
+}
+
+table tr:nth-child(odd) {
+    background: #E2E8F0;
+}
