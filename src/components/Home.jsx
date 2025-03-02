@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // Table
 import Component from './Component';
+import useFetch from "../hooks/useFetch";
 
 function Home() {
     const load = {
@@ -12,18 +13,7 @@ function Home() {
         justifyContent: "center"
     }
 
-    const [database, setDatabase] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(res => res.json())
-            .then(data => {
-                setDatabase(data);
-                setLoading(false);
-            })
-            .catch(err => console.log(err));
-    }, []);
+    const { database, loading } = useFetch("https://jsonplaceholder.typicode.com/users");
 
     if (loading) {
         return <div style={load}>Loading...</div>

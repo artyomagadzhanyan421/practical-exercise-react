@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { data, useParams } from 'react-router';
+
+import useFetch from '../hooks/useFetch';
 
 // CSS
 import "../styles/Component.css";
@@ -17,18 +17,7 @@ function Data() {
 
     const { id } = useParams();
 
-    const [database, setDatabase] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setDatabase(data);
-                setLoading(false);
-            })
-            .catch(err => console.log(err));
-    }, []);
+    const { database, loading } = useFetch(`https://jsonplaceholder.typicode.com/users/${id}`);
 
     document.title = `Loading...`;
 
